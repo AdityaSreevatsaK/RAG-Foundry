@@ -15,6 +15,8 @@ Projects that answer one-off questions from a fixed corpus with explicit citatio
 chunking, solid retrieval (keyword/dense/hybrid), and tight prompting to minimize hallucinations. Ideal for establishing
 baselines for quality, latency, and cost before adding complexity.
 
+✦ [Implementing a Baseline RAG for Document Question-Answering with FAISS and Microsoft's Phi-3](src/Baseline%20RAG%20-%20QA%20(FAISS%20+%20Phi3).py) <br />
+
 ---
 
 ### 2. Conversational QA (Multi-Turn + Memory)

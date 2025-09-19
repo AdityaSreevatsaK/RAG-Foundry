@@ -1,0 +1,33 @@
+Data Science, Machine Learning, and Artificial Intelligence
+
+Data Science
+Data science is the interdisciplinary field that focuses on extracting meaningful insights and knowledge from raw data. It combines statistical methods, mathematics, computer science, and domain expertise to analyse both structured and unstructured data. A data scientist’s role involves collecting, cleaning, processing, and visualising data, followed by building models that support decision-making. The process typically includes steps like exploratory data analysis, feature engineering, and hypothesis testing. Tools such as Python, R, SQL, and visualisation libraries (e.g., Matplotlib, Seaborn, Tableau, Power BI) are commonly used.
+
+Data science goes beyond analysis by providing actionable recommendations. For example, in business, it can help identify customer segments, predict sales trends, or detect fraud. In healthcare, it aids in analysing medical records, predicting disease risks, and improving treatment outcomes. Fundamentally, data science is about turning raw data into knowledge and supporting evidence-based strategies.
+
+Machine Learning (ML)
+Machine learning is a subset of data science and artificial intelligence that focuses on creating algorithms capable of learning patterns from data and improving their performance without explicit programming. Instead of hard-coded rules, ML models learn relationships from data and generalise to make predictions on unseen inputs.
+
+ML can be divided into three broad types:
+
+1. Supervised Learning – Models learn from labelled datasets. Examples include predicting house prices (regression) or classifying emails as spam or not (classification).
+2. Unsupervised Learning – Models identify patterns in unlabelled data, such as grouping customers into clusters or reducing dimensionality with methods like PCA.
+3. Reinforcement Learning – Agents learn by interacting with an environment and receiving rewards or penalties. This is used in robotics, recommendation systems, and game-playing AI.
+
+Algorithms in ML range from simple linear regression and decision trees to advanced ensemble methods like random forests and gradient boosting. Libraries such as Scikit-learn, TensorFlow, and PyTorch enable efficient model development.
+
+Artificial Intelligence (AI)
+Artificial intelligence is the broader concept of creating systems that can perform tasks typically requiring human intelligence. While ML is one way of achieving AI, AI itself encompasses a wider range of approaches, including rule-based systems, expert systems, optimisation techniques, natural language processing (NLP), and computer vision.
+
+AI aims to replicate aspects of human cognition such as reasoning, learning, perception, and decision-making. Modern AI applications include self-driving cars, voice assistants (e.g., Siri, Alexa), recommendation systems (Netflix, Amazon), and large language models like ChatGPT.
+
+AI is often categorised as:
+
+* Narrow AI – Specialised systems designed for a specific task, such as image recognition or medical diagnosis.
+* General AI – A theoretical level of intelligence where a system can perform any intellectual task that a human can.
+* Superintelligence – A speculative concept where AI surpasses human cognitive abilities.
+
+Interconnection
+Data science provides the foundation by handling and interpreting data. Machine learning builds on this by developing algorithms that learn from data. Artificial intelligence represents the ultimate goal of making systems intelligent, with ML being a core driver of modern AI breakthroughs.
+
+Together, data science, ML, and AI are shaping industries, driving automation, and enabling smarter decision-making across the world.
