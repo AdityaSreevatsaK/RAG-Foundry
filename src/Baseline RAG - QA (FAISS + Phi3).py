@@ -17,7 +17,7 @@ warnings.filterwarnings("ignore")
 
 
 @track_time
-def baseline_rag():
+def baseline_rag_qa():
     """
     Implements a Baseline Retrieval-Augmented Generation (RAG) pipeline for document question-answering using FAISS and Microsoft's Phi-3 model.
 
@@ -36,7 +36,7 @@ def baseline_rag():
     Returns:
         None
     """
-    log = setup_logger("Baseline RAG")
+    log = setup_logger("Baseline RAG - QA.")
     log.info("Implementing a Baseline RAG for Document Question-Answering with FAISS and Microsoft's Phi-3.")
     if "Data Science, Machine Learning and Artificial Intelligence.txt" not in os.listdir("../data/"):
         log.error("❗️❗️File not found in data directory.")
@@ -102,4 +102,4 @@ def baseline_rag():
 
 
 if __name__ == "__main__":
-    baseline_rag()
+    baseline_rag_qa()
