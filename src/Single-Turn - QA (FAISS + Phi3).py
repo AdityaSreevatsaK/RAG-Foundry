@@ -36,7 +36,7 @@ def baseline_rag_qa():
     Returns:
         None
     """
-    log = setup_logger("Baseline RAG - QA.")
+    log = setup_logger("Single Turn - QA - RAG.")
     log.info("Implementing a Baseline RAG for Document Question-Answering with FAISS and Microsoft's Phi-3.")
     if "Data Science, Machine Learning and Artificial Intelligence.txt" not in os.listdir("../data/"):
         log.error("❗️❗️File not found in data directory.")

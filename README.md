@@ -15,8 +15,9 @@ Projects that answer one-off questions from a fixed corpus with explicit citatio
 chunking, solid retrieval (keyword/dense/hybrid), and tight prompting to minimize hallucinations. Ideal for establishing
 baselines for quality, latency, and cost before adding complexity.
 
-✦ [Implementing a Baseline RAG for Document Question-Answering with FAISS and Microsoft's Phi-3](src/Baseline%20RAG%20-%20QA%20(FAISS%20+%20Phi3).py) <br />
-✦ [Building a PDF Question-Answering System with FAISS and Phi-3](src/Baseline%20RAG%20-%20PDF%20Question-Answering%20System%20(FAISS%20+%20Phi-3).py) <br />
+✦ [Implementing a Baseline RAG for Document Question-Answering with FAISS and Microsoft's Phi-3](src/Single-Turn%20-%20QA%20(FAISS%20+%20Phi3).py) <br />
+✦ [Building a PDF Question-Answering System with FAISS and Microsoft's Phi-3](src/Single-Turn%20-%20PDF%20Question-Answering%20System%20(FAISS%20+%20Phi-3).py) <br />
+
 ---
 
 ### 2. Conversational QA (Multi-Turn + Memory)
@@ -24,6 +25,8 @@ baselines for quality, latency, and cost before adding complexity.
 Projects that sustain a dialogue over documents, carrying context across turns while re-retrieving fresh evidence each
 time. The focus is on reference resolution, follow-up disambiguation, and safe memory use rather than long prompts
 alone. Great for testing how well the system adapts to clarifications and evolving user intent.
+
+✦ []() <br />
 
 ---
 

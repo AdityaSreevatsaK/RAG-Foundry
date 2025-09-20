@@ -12,8 +12,6 @@ from langchain_ollama.llms import OllamaLLM
 
 from utils import setup_logger, track_time
 
-log = setup_logger("Baseline RAG - PDF QA.")
-
 warnings.filterwarnings('ignore')
 
 
@@ -35,6 +33,7 @@ def baseline_rag_pdf_qa():
     Returns:
         None
     """
+    log = setup_logger("Single Turn - PDF QA - RAG.")
     pdf_file_name = "United Nations Universal Declaration of Human Rights 1948.pdf"
     log.info("Baseline RAG - PDF Question-Answering System with FAISS and Phi-3")
     log.info(f"We are working with data from {pdf_file_name[:-4]}.")
