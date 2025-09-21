@@ -26,7 +26,7 @@ Projects that sustain a dialogue over documents, carrying context across turns w
 time. The focus is on reference resolution, follow-up disambiguation, and safe memory use rather than long prompts
 alone. Great for testing how well the system adapts to clarifications and evolving user intent.
 
-✦ []() <br />
+✦ [Building a Conversational RAG Chatbot with Memory and LangChain](src/Conversational%20-%20QA%20(FAISS%20+%20Phi3).py) <br />
 
 ---
 
