@@ -21,6 +21,28 @@ warnings.filterwarnings('ignore')
 
 @track_time
 def conversational_pdf_qa():
+    """
+    Builds and runs a conversational Retrieval-Augmented Generation (RAG) chatbot for question answering over a PDF document.
+
+    Workflow:
+        1. Loads a specified PDF document from the data directory.
+        2. Splits the document into text chunks for processing.
+        3. Embeds the chunks using HuggingFace embeddings and stores them in a FAISS vector store.
+        4. Connects to the Ollama Phi3 language model.
+        5. Sets up prompts for context-aware question answering and question rephrasing.
+        6. Creates a history-aware retriever and a conversational retrieval chain.
+        7. Enters a loop to interactively answer user questions based on the document, maintaining chat history.
+        8. Handles connection errors to the LLM service.
+
+    Logging:
+        - Logs progress, errors, and answers at various stages.
+
+    Exceptions:
+        - Handles missing document and connection errors to the Ollama model.
+
+    Returns:
+        None
+    """
     log = setup_logger("Conversational - QA - RAG.")
     log.info("Building a Conversational RAG Chatbot with Memory and LangChain")
     data_directory = "../data/"

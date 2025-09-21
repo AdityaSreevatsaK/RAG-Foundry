@@ -15,9 +15,8 @@ from utils import setup_logger, track_time
 warnings.filterwarnings("ignore")
 
 
-
 @track_time
-def baseline_rag_qa():
+def single_turn_qa():
     """
     Implements a Baseline Retrieval-Augmented Generation (RAG) pipeline for document question-answering using FAISS and Microsoft's Phi-3 model.
 
@@ -102,4 +101,4 @@ def baseline_rag_qa():
 
 
 if __name__ == "__main__":
-    baseline_rag_qa()
+    single_turn_qa()

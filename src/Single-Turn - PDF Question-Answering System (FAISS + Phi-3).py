@@ -16,7 +16,7 @@ warnings.filterwarnings('ignore')
 
 
 @track_time
-def baseline_rag_pdf_qa():
+def single_turn_pdf_qa():
     """
     Runs a Baseline Retrieval-Augmented Generation (RAG) Question-Answering system on a PDF document using FAISS and Phi-3.
 
@@ -102,4 +102,4 @@ def baseline_rag_pdf_qa():
 
 
 if __name__ == "__main__":
-    baseline_rag_pdf_qa()
+    single_turn_pdf_qa()
