@@ -18,14 +18,14 @@ The supplied [example data](data/) is for experiments. Review the relevant scrip
 
 The scripts use legacy LangChain imports and do **not** have pinned dependencies or a verified one-command installation. They need a compatible Python/LangChain environment, an Ollama installation with a local `phi3` model, and the embedding model downloaded on first use. Some dependencies or model downloads may require an internet connection.
 
-The text QA script uses `../data/` paths relative to the working directory. With the prerequisites installed, run it from `src/`, not the repository root:
+Bundled data paths now resolve from the repository location, not the terminal working directory. With compatible dependencies installed, run from the repository root:
 
 ```powershell
 Set-Location src
 python ".\Single-Turn - QA (FAISS + Phi3).py"
 ```
 
-**Caution:** Successful execution with current dependency releases has not been independently verified. There is no automated CI, reproducible dependency lock or regression test suite in this repository.
+**Caution:** Successful execution with current dependency releases has not been independently verified. Offline unit tests and Python syntax checks cover document-path resolution and shared utilities. There is still no reproducible model/dependency lock or live RAG integration test.
 
 ## Not implemented here
 
