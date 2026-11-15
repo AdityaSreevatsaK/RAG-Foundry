@@ -1,5 +1,3 @@
-import os
-import warnings
 
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains.retrieval import create_retrieval_chain
@@ -10,9 +8,10 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_ollama.llms import OllamaLLM
 
+from paths import bundled_document
 from utils import setup_logger, track_time
 
-warnings.filterwarnings('ignore')
+
 
 
 @track_time
@@ -37,12 +36,13 @@ def single_turn_pdf_qa():
     pdf_file_name = "United Nations Universal Declaration of Human Rights 1948.pdf"
     log.info("Baseline RAG - PDF Question-Answering System with FAISS and Phi-3")
     log.info(f"We are working with data from {pdf_file_name[:-4]}.")
-    if pdf_file_name not in os.listdir("../data/"):
+    document_path = bundled_document(pdf_file_name)
+    if not document_path.is_file():
         log.error("❗❗File not found in path.")
         return
 
     # File loading.
-    un_human_rights_document = PyPDFLoader(f"../data/{pdf_file_name}")
+    un_human_rights_document = PyPDFLoader(str(document_path))
     un_human_rights_data = un_human_rights_document.load()
     log.info("✅ Document loaded successfully.")
     log.debug(f"First 50 characters in document: {un_human_rights_data[0].page_content[:50]}")
