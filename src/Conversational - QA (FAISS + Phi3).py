@@ -1,5 +1,3 @@
-import os
-import warnings
 
 import httpx
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -14,9 +12,10 @@ from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_ollama.llms import OllamaLLM
 
+from paths import bundled_document
 from utils import setup_logger, track_time
 
-warnings.filterwarnings('ignore')
+
 
 
 @track_time
@@ -45,17 +44,17 @@ def conversational_pdf_qa():
     """
     log = setup_logger("Conversational - QA - RAG.")
     log.info("Building a Conversational RAG Chatbot with Memory and LangChain")
-    data_directory = "../data/"
     pdf_file_name = "United Nations Universal Declaration of Human Rights 1948.pdf"
+    document_path = bundled_document(pdf_file_name)
     log.info(f"We are working with data from {pdf_file_name[:-4]}.")
 
-    if pdf_file_name not in os.listdir(data_directory):
+    if not document_path.is_file():
         log.error("❗❗ Document not found in path.")
         return
 
     try:
         # Loading the document.
-        un_human_rights_data = PyPDFLoader(data_directory + pdf_file_name).load()
+        un_human_rights_data = PyPDFLoader(str(document_path)).load()
         log.info("✅ Document loaded successfully.")
         log.debug(f"First 50 characters in the document: {un_human_rights_data[0].page_content[:50]}")
 
