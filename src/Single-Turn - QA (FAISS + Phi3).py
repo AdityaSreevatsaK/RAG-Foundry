@@ -1,5 +1,3 @@
-import os
-import warnings
 
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains.retrieval import create_retrieval_chain
@@ -10,9 +8,10 @@ from langchain_community.llms import Ollama
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
+from paths import bundled_document
 from utils import setup_logger, track_time
 
-warnings.filterwarnings("ignore")
+
 
 
 @track_time
@@ -37,12 +36,13 @@ def single_turn_qa():
     """
     log = setup_logger("Single Turn - QA - RAG.")
     log.info("Implementing a Baseline RAG for Document Question-Answering with FAISS and Microsoft's Phi-3.")
-    if "Data Science, Machine Learning and Artificial Intelligence.txt" not in os.listdir("../data/"):
+    document_path = bundled_document("Data Science, Machine Learning and Artificial Intelligence.txt")
+    if not document_path.is_file():
         log.error("❗️❗️File not found in data directory.")
         return
 
     # Load file.
-    ds_ml_ai_loader = TextLoader("../data/Data Science, Machine Learning and Artificial Intelligence.txt")
+    ds_ml_ai_loader = TextLoader(str(document_path))
     ds_ml_ai_data = ds_ml_ai_loader.load()
     log.info("✅ File loaded successfully.")
     log.debug(f"File content - first 50 characters: {ds_ml_ai_data[0].page_content[:50]}")
