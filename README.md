@@ -1,72 +1,34 @@
-# <p align="center">RAG Foundry</p>
+# RAG Foundry
 
-## <p align="center"><i>Forging Truth from Data.</i></p>
+A small collection of **experimental Python RAG examples** using LangChain, FAISS, local Ollama inference and Hugging Face embeddings.
 
-RAG-Foundry is an experimental space for building and testing Retrieval-Augmented Generation (RAG) systems. This
-collection of focused projects explores various techniques for grounding LLMs, featuring practical implementations with
-tools like LangChain, LlamaIndex, and various vector databases. Ideal for prototyping, learning, and hands-on
-experimentation.
+**Scope:** This repository currently contains **three example scripts**. It is a learning and prototyping collection, not a packaged, tested or production-ready RAG framework.
 
----
+## Available examples
 
-### 1. Single-Turn QA (Grounded Answers)
+| Example | Source |
+| --- | --- |
+| Single-turn question answering over a text document | [FAISS + Phi-3 text QA](src/Single-Turn%20-%20QA%20%28FAISS%20%2B%20Phi3%29.py) |
+| Question answering over a PDF document | [FAISS + Phi-3 PDF QA](src/Single-Turn%20-%20PDF%20Question-Answering%20System%20%28FAISS%20%2B%20Phi-3%29.py) |
+| Conversational question answering | [FAISS + Phi-3 conversational QA](src/Conversational%20-%20QA%20%28FAISS%20%2B%20Phi3%29.py) |
 
-Projects that answer one-off questions from a fixed corpus with explicit citations to sources. The emphasis is on clean
-chunking, solid retrieval (keyword/dense/hybrid), and tight prompting to minimize hallucinations. Ideal for establishing
-baselines for quality, latency, and cost before adding complexity.
+The supplied [example data](data/) is for experiments. Review the relevant script and data path before execution.
 
-✦ [Implementing a Baseline RAG for Document Question-Answering with FAISS and Microsoft's Phi-3](src/Single-Turn%20-%20QA%20(FAISS%20+%20Phi3).py) <br />
-✦ [Building a PDF Question-Answering System with FAISS and Microsoft's Phi-3](src/Single-Turn%20-%20PDF%20Question-Answering%20System%20(FAISS%20+%20Phi-3).py) <br />
+## Running an example
 
----
+The scripts use legacy LangChain imports and do **not** have pinned dependencies or a verified one-command installation. They need a compatible Python/LangChain environment, an Ollama installation with a local `phi3` model, and the embedding model downloaded on first use. Some dependencies or model downloads may require an internet connection.
 
-### 2. Conversational QA (Multi-Turn + Memory)
+The text QA script uses `../data/` paths relative to the working directory. With the prerequisites installed, run it from `src/`, not the repository root:
 
-Projects that sustain a dialogue over documents, carrying context across turns while re-retrieving fresh evidence each
-time. The focus is on reference resolution, follow-up disambiguation, and safe memory use rather than long prompts
-alone. Great for testing how well the system adapts to clarifications and evolving user intent.
+```powershell
+Set-Location src
+python ".\Single-Turn - QA (FAISS + Phi3).py"
+```
 
-✦ [Building a Conversational RAG Chatbot with Memory and LangChain](src/Conversational%20-%20QA%20(FAISS%20+%20Phi3).py) <br />
+**Caution:** Successful execution with current dependency releases has not been independently verified. There is no automated CI, reproducible dependency lock or regression test suite in this repository.
 
----
+## Not implemented here
 
-### 3. Long-Form Synthesis (Summarize & Compare)
+Multi-hop retrieval, structured extraction, document/code copilots and other RAG patterns are possible future experiments, **not current features**. The examples do not demonstrate validated citation accuracy, latency improvements or security hardening.
 
-Projects that produce grounded briefs, reports, or comparisons by weaving together many sources. You’ll explore
-map-reduce or refine patterns, quote attribution, outline-driven drafting, and redundancy control. Success is measured
-by coverage, faithfulness, and readability at lengths beyond a paragraph.
-
----
-
-### 4. Structured Extraction (RAG-Extract)
-
-Projects that convert unstructured text into JSON or tables with field-level provenance. They combine targeted retrieval
-with schema-aware prompting and require citing exactly where each value came from. This is where precision/recall of
-fields, normalization, and traceability really matter.
-
----
-
-### 5. Multi-Hop / Compositional QA
-
-Projects that require chaining evidence across multiple chunks or documents to reach an answer. Expect query
-decomposition, iterative retrieval, and reasoning steps that verify intermediate claims. Evaluation centers on factual
-correctness under composition and robustness to partial retrieval.
-
----
-
-### 6. Code & Tech Docs Copilot
-
-Projects that answer developer questions by retrieving from codebases, API specs, and technical docs. They integrate
-symbol/file search, snippet grounding with file paths and line numbers, and pragmatic “how-to” guidance. The goal is to
-make help feel like an informed teammate rather than a generic chatbot.
-
----
-
-### 7. Tables, Data & Semi-Structured QA
-
-Projects that answer questions over CSV/Excel, HTML/PDF tables, and metadata catalogs with precise cell-level grounding.
-They often pair retrieval with parsers or light SQL to compute aggregates and surface the exact rows/columns used.
-Accuracy, numeric faithfulness, and transparent evidence are the key tests here.
-
----
-
+Licensed under [MIT](LICENSE).
